@@ -15,14 +15,8 @@ def search():
             while confirm:
                 time.sleep(0.5)
                 try:
-                    # Verifica primeiro se a imagem que deve ser evitada está na tela
-                    evitar = pyautogui.locateOnScreen('evitar_este_item.png', confidence=0.7)
-                    if evitar:
-                        print('Imagem para EVITAR encontrada. Ignorando tentativa de clique...')
-                        continue # Pula para a próxima iteração sem procurar o item
-                    
                     # Agora verifica a imagem do item, já que a de evitar não foi encontrada
-                    pos = pyautogui.locateOnScreen('item.png', confidence=0.7)
+                    pos = pyautogui.locateOnScreen('item.png', confidence=0.9)
                     if pos:
                         print(f'Item encontrado. Posição: {pos}')
                         pyautogui.click(pos)
